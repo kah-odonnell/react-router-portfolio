@@ -1,0 +1,17 @@
+{
+	"editor.formatOnSave": true,
+	"[javascript]": {
+		"editor.formatOnSave": true
+	},
+	"eslint.alwaysShowStatus": true,
+	"files.associations": {
+		"*.js": "javascriptreact"
+	},
+	"eslint.enable": true,
+	"editor.insertSpaces": false,
+	"editor.tabSize": 2,
+	"editor.detectIndentation": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	}
+}
