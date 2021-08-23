@@ -1,18 +1,17 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import * as React from "react";
 import {
-	BrowserRouter as Router,
-	Route,
-	Link,
+	Route
 } from "react-router-dom";
 
 export interface IRoute {
-  path: string;
-  component: (props: {routes?: IRoute[]}) => React.ReactElement;
-  routes?: IRoute[];
-  exact?: boolean | undefined;
+	path: string;
+	component: React.FC<any>;
+	routes?: IRoute[];
+	exact?: boolean | undefined;
 }
-  
+
 export default function RouteWithSubRoutes(route: IRoute): React.ReactElement {
 	return (
 		<Route path={route.path} exact={route.exact}>

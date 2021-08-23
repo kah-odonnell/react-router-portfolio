@@ -4,7 +4,7 @@ import {
 } from "react-router-dom";
 import RouteWithSubRoutes, { IRoute } from "../RouteWithSubRoutes";
 
-const Showcase = ({ routes }: {routes: IRoute[]}): React.ReactElement =>
+const Showcase: React.FC<{ routes: IRoute[] }> = (props: { routes: IRoute[] }) =>
 	<div>
 		<h2>Showcase</h2>
 		<ul>
@@ -12,12 +12,12 @@ const Showcase = ({ routes }: {routes: IRoute[]}): React.ReactElement =>
 			<li><Link to="/showcase/cart">Cart</Link></li>
 		</ul>
 
-		{routes.map((route: IRoute) => (
+		{props.routes.map((route: IRoute) => (
 			<RouteWithSubRoutes key={route.path} {...route} />
 		))}
 	</div>;
 
 export default Showcase;
 
-export const Cart = (): React.ReactElement => <h3>Cart</h3>;
-export const Bus = (): React.ReactElement => <h3>Bus</h3>;
+export const Cart: React.FC = () => <h3>Cart</h3>;
+export const Bus: React.FC = () => <h3>Bus</h3>;
