@@ -1,13 +1,14 @@
 import * as React from "react";
-import {
-	BrowserRouter as Router
-} from "react-router-dom";
-import MainMenu from "./components/porfolio/MainMenu";
+import rootReducer from "./redux/reducers";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import AppView from "./redux/containers/AppView";
 
 export default function App() {
+	const store = createStore(rootReducer);
 	return (
-		<Router>
-			<MainMenu />
-		</Router>
+		<Provider store={store}>
+			<AppView />
+		</Provider>
 	);
 }

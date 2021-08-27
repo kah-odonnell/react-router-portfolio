@@ -1,0 +1,302 @@
+{
+  "adjacency": {
+    "lucifer": ["set_the_stage", "psychic_needles", "power_from_pestilence", "undead_army", "immolator", "mystic_dew", "superconductor", "rock_armor"],
+    "set_the_stage": ["sleight_of_hand", "sharp_mind"],
+    "psychic_needles": ["sharp_mind", "vexing_hexes"],
+    "mystic_dew": ["fork_in_the_water"],
+    "immolator": ["hot_draw"]
+  },
+  "nodes": {
+  	"natural_affinity": {
+    	"name": "Natural Affinity",
+    	"imageSrc": "public/imgs/components/skills/stars-stack.png",
+    	"description": "Gain a magical attribute of your choosing, permanently.",
+    	"choices": [
+    		{
+    			"name": "Illusion Magic",
+    			"description": "Gain the Illusion Magic attribute.",
+    			"attributeColor": "ILLUSION_MAGIC",
+		    	"x": 0,
+		    	"y": -60,
+                "grants": {
+                    "attributes": [
+                        "ILLUSION_MAGIC"
+                    ]
+                }
+    		},
+    		{
+    			"name": "Reaping",
+    			"description": "Gain the Reaping attribute.",
+    			"attributeColor": "REAPING",
+		    	"x": -52,
+		    	"y": 30,
+                "grants": {
+                    "attributes": [
+                        "REAPING"
+                    ]
+                }
+    		},
+    		{
+    			"name": "Fire Magic",
+    			"description": "Gain the Fire Magic attribute.",
+    			"attributeColor": "FIRE_MAGIC",
+		    	"x": 60,
+		    	"y": 0,
+                "grants": {
+                    "attributes": [
+                        "FIRE_MAGIC"
+                    ]
+                }
+    		},
+    		{
+    			"name": "Waterbending",
+    			"description": "Gain the Waterbending attribute.",
+    			"attributeColor": "WATERBENDING",
+		    	"x": 35,
+		    	"y": 49,
+                "grants": {
+                    "attributes": [
+                        "WATERBENDING"
+                    ]
+                }
+    		}
+    	]
+  	},
+    "set_the_stage": {
+    	"name": "Set the Stage",
+    	"imageSrc": "public/imgs/components/skills/theater-curtains.png",
+    	"x": -50,
+    	"y": -75,
+    	"attributeColor": "ILLUSION_MAGIC",
+    	"tiers": [
+    		{
+    			"description": "Gain 1 block each time you prepare an Illusion Magic counter.",
+                "trigger": {
+                    "action_type_id": "COUNTER",
+                    "attributes_id": "ILLUSION_MAGIC"
+                },
+                "resolve": {
+                    "grant_block_fixed": {
+                        "target": "{effectActivator}",
+                        "value": 1
+                    }
+                }
+    		},
+    		{
+    			"description": "Gain 2 block each time you prepare an Illusion Magic counter.",
+                "trigger": {
+                    "action_type_id": "COUNTER",
+                    "attributes_id": "ILLUSION_MAGIC"
+                },
+                "resolve": {
+                    "grant_block_fixed": {
+                        "target": "{effectActivator}",
+                        "value": 2
+                    }
+                }
+    		},
+    		{
+    			"description": "Gain 4 block each time you prepare an Illusion Magic counter.",
+                "trigger": {
+                    "action_type_id": "COUNTER",
+                    "attributes_id": "ILLUSION_MAGIC"
+                },
+                "resolve": {
+                    "grant_block_fixed": {
+                        "target": "{effectActivator}",
+                        "value": 4
+                    }
+                }
+    		}
+    	]
+    },
+    "psychic_needles": {
+    	"name": "Psychic Needles",
+    	"imageSrc": "public/imgs/components/skills/sewing-needle.png",
+    	"x": 50,
+    	"y": -75,
+    	"attributeColor": "DISRUPTION",
+    	"tiers": [
+    		{
+    			"description": "When you discard due to a Disruption card effect, deal 2 damage to a random opposing unit for each card discarded."
+    		},
+    		{
+    			"description": "When you discard due to a Disruption card effect, deal 2 damage to a random opposing unit, twice, for each card discarded."
+    		}
+    	]
+    },
+    "sleight_of_hand": {
+    	"name": "Sleight Of Hand",
+    	"imageSrc": "public/imgs/components/skills/card-play.png",
+    	"x": -100,
+    	"y": -150,
+    	"attributeColor": "ILLUSION_MAGIC",
+    	"description": "Once per turn, if you have played an Illusion Magic card, draw a card when you run out of cards in your hand."
+    },
+    "sharp_mind": {
+    	"name": "Sharp Mind",
+    	"imageSrc": "public/imgs/components/skills/frontal-lobe.png",
+    	"x": 0,
+    	"y": -150,
+    	"attributeColor": "COERCION",
+    	"tiers": [
+    		{
+    			"description": "Your first Coercion card played each battle costs -1 Mana."
+    		},
+    		{
+    			"description": "Your first Coercion card played each battle costs -2 Mana."
+    		}
+    	]
+    },
+    "vexing_hexes": {
+     	"name": "Vexing Hexes",
+    	"imageSrc": "public/imgs/components/skills/oppression.png",
+    	"x": 100,
+    	"y": -150,
+    	"attributeColor": "DISRUPTION",
+    	"tiers": [
+    		{
+    			"description": "Your Disruption hexes last one additional turn."
+    		},
+    		{
+    			"description": "Your Disruption hexes last two additional turns."
+    		}
+    	]
+    },
+    "power_from_pestilence": {
+     	"name": "Power From Pestilence",
+    	"imageSrc": "public/imgs/components/skills/skull-bolt.png",
+    	"x": -80,
+    	"y": 0,
+    	"attributeColor": "REAPING",
+    	"tiers": [
+    		{
+    			"description": "Two times per battle, gain 1 Mana when a non-minion unit is destroyed by a Reaping card effect."
+    		},
+    		{
+    			"description": "Once per turn, gain 1 Mana when a non-minion unit is destroyed by a Reaping card effect."
+    		}
+    	]
+    },
+    "undead_army": {
+     	"name": "Undead Army",
+    	"imageSrc": "public/imgs/components/skills/triple-skulls.png",
+    	"x": -50,
+    	"y": 75,
+    	"attributeColor": "REANIMATION",
+    	"tiers": [
+    		{
+    			"description": "Keep one minion alive between battles."
+    		},
+    		{
+    			"description": "Keep two minions alive between battles."
+    		}
+    	]
+    },
+    "immolator": {
+     	"name": "Immolator",
+    	"imageSrc": "public/imgs/components/skills/burning-passion.png",
+    	"x": 91,
+    	"y": -14,
+    	"attributeColor": "FIRE_MAGIC",
+    	"tiers": [
+    		{
+    			"description": "Your critical hits from Fire Magic attacks apply Burning."
+    		},
+    		{
+    			"description": "Your critical hits from Fire Magic attacks apply 2 stacks of Burning."
+    		},
+    		{
+    			"description": "Your critical hits from Fire Magic attacks apply 3 stacks of Burning."
+    		}
+    	]
+    },
+    "hot_draw": {
+     	"name": "Hot Draw",
+    	"imageSrc": "public/imgs/components/skills/burning-passion.png",
+    	"x": 182,
+    	"y": -28,
+    	"attributeColor": "FIRE_MAGIC",
+    	"tiers": [
+    		{
+    			"description": "If you do not draw a Fire Magic attack when drawing a new hand during your End Phase, add a random Fire Magic attack from your deck to your hand."
+    		},
+    		{
+    			"description": "If you draw one or zero Fire Magic attacks when drawing a new hand during your End Phase, add a random Fire Magic attack from your deck to your hand."
+    		}
+    	]
+    },
+    "mystic_dew": {
+     	"name": "Mystic Dew",
+    	"imageSrc": "public/imgs/components/skills/water-splash.png",
+    	"x": 88,
+    	"y": 28,
+    	"attributeColor": "WATERBENDING",
+    	"tiers": [
+    		{
+    			"description": "Healing from Waterbending effects also removes one stack of a random condition."
+    		},
+    		{
+    			"description": "Healing from Waterbending effects also removes 2 stacks of a random condition."
+    		}
+    	]
+    },
+    "fork_in_the_water": {
+     	"name": "Fork in the Water",
+    	"imageSrc": "public/imgs/components/skills/water-splash.png",
+    	"description": "Select one of the following:\n\n When Waterbending boons cast by this unit expire, they restore 8% of the health of the unit upon which the boon was applied,\nOR\nEffects that deal ice damage deal 8% bonus damage.",
+    	"x": 176,
+    	"y": 56,
+    	"attributeColor": "WATERBENDING",
+    	"choices": [
+    		{
+    			"name": "Rains of Charity",
+    			"description": "When a Waterbending boon cast by this unit expires, restore 8% of the health of the unit upon which the boon was applied.",
+    			"attributeColor": "ILLUSION_MAGIC",
+		    	"x": 0,
+		    	"y": -60
+    		},
+    		{
+    			"name": "Icehearted",
+    			"description": "Effects that deal ice damage deal 8% bonus damage.",
+    			"attributeColor": "ILLUSION_MAGIC",
+		    	"x": 0,
+		    	"y": -60
+    		}
+    	]
+    },
+    "superconductor": {
+     	"name": "Superconductor",
+    	"imageSrc": "public/imgs/components/skills/electrical-resistance.png",
+    	"x": 67,
+    	"y": 63,
+    	"attributeColor": "AIR_CHANNELING",
+    	"tiers": [
+    		{
+    			"description": "Your Air Channeling counters do 4% bonus damage per their position in the chain."
+    		},
+    		{
+    			"description": "Your Air Channeling counters do 8% bonus damage per their position in the chain."
+    		},
+    		{
+    			"description": "Your Air Channeling counters do 12% bonus damage per their position in the chain."
+    		}
+    	]
+    },
+    "rock_armor": {
+     	"name": "Rock Armor",
+    	"imageSrc": "public/imgs/components/skills/rock-golem.png",
+    	"x": 32,
+    	"y": 86,
+    	"attributeColor": "GEOMANCY",
+    	"tiers": [
+    		{
+    			"description": "Gain 2 additional block every time you gain block from a Geomancy card."
+    		},
+    		{
+    			"description": "Gain 4 additional block every time you gain block from a Geomancy card."
+    		}
+    	]
+    }
+  }
+}

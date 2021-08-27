@@ -10,6 +10,7 @@ const Showcase: React.FC<{ routes: IRoute[] }> = (props: { routes: IRoute[] }) =
 		<ul>
 			<li><Link to="/showcase/bus">Bus</Link></li>
 			<li><Link to="/showcase/cart">Cart</Link></li>
+			<li><Link to="/showcase/arsgoetia">Ars Goetia</Link></li>
 		</ul>
 
 		{props.routes.map((route: IRoute) => (
